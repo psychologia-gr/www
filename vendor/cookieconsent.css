@@ -104,3 +104,38 @@
     flex-direction: column;
   }
 }
+
+/* Phones. The library has its own 640px block that stacks the buttons one per
+ * row, and every declaration in it carries !important - flex-direction on both
+ * .cm__btns and .cm__btn-group, `flex: auto` on the button, and a top margin
+ * between them. Nothing here outranks that without !important of its own, and
+ * matching the library's selectors exactly is what lets ours win on order.
+ *
+ * Three short Greek labels fit across a 360px phone at this font size, but
+ * wrap is left on as the safety valve: .cm is overflow:hidden, so a row that
+ * does not fit would be clipped rather than pushed to a second line. */
+@media (max-width: 640px) {
+  #cc-main .cm__btns {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  #cc-main .cm__btn-group {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  #cc-main .cm__btn {
+    flex: 0 1 auto !important;
+  }
+
+  #cc-main .cm__btn + .cm__btn,
+  #cc-main .cm__btn-group + .cm__btn-group {
+    margin: 0 !important;
+  }
+}
