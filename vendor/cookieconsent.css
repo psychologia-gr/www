@@ -141,4 +141,32 @@
   #cc-main .cm__btn-group + .cm__btn-group {
     margin: 0 !important;
   }
+
+  /* The desktop strip's tight spacing does not carry over to the stacked
+   * layout: the text sat flush against the top edge and the buttons against
+   * the bottom. Room above, between and below, a slightly larger text, and
+   * buttons tall enough to tap. */
+  #cc-main .cm__texts {
+    padding-top: 0.85rem;
+  }
+
+  #cc-main .cm__desc {
+    padding: 0 1rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  #cc-main .cm__btns {
+    gap: 0.45rem;
+    padding: 0.65rem 0.9rem 0.85rem;
+  }
+
+  #cc-main .cm__btn-group {
+    gap: 0.45rem;
+  }
+
+  #cc-main .cm__btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.74rem;
+  }
 }
